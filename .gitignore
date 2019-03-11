@@ -1,0 +1,6 @@
+.stack-work/
+hs-empty-project-plain.cabal
+*~
+.cabal-sandbox/
+cabal.sandbox.config
+
