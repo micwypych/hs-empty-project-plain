@@ -4,16 +4,16 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5e4ff32d2a2d3e7134bd8b9d59a9a7e11e6eab391f3dbb880a1b72b259bb1e37
+-- hash: f3e6ea6e865a8ac8288c2d61b50be8126de84056d582b6c7e135a36702daada9
 
-name:           hs-empty-project-plain
+name:           webapp
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/hs-empty-project-plain#readme>
-homepage:       https://github.com/githubuser/hs-empty-project-plain#readme
-bug-reports:    https://github.com/githubuser/hs-empty-project-plain/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2019 Author name here
+homepage:       https://github.com/micwypych/webapp#readme
+bug-reports:    https://github.com/micwypych/webapp/issues
+author:         Michał Wypych
+maintainer:     mwypych@agh.edu.pl
+copyright:      2019 Michał Wypych
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -23,40 +23,44 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/hs-empty-project-plain
+  location: https://github.com/micwypych/webapp
 
 library
   exposed-modules:
       Lib
+      Student
   other-modules:
-      Paths_hs_empty_project_plain
+      Paths_webapp
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , text
   default-language: Haskell2010
 
-executable hs-empty-project-plain-exe
+executable webapp-exe
   main-is: Main.hs
   other-modules:
-      Paths_hs_empty_project_plain
+      Paths_webapp
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , hs-empty-project-plain
+    , text
+    , webapp
   default-language: Haskell2010
 
-test-suite hs-empty-project-plain-test
+test-suite webapp-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_hs_empty_project_plain
+      Paths_webapp
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , hs-empty-project-plain
+    , text
+    , webapp
   default-language: Haskell2010

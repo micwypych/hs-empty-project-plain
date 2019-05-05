@@ -1,10 +1,10 @@
-name:                hs-empty-project-plain
+name:                webapp
 version:             0.1.0.0
-github:              "githubuser/hs-empty-project-plain"
+github:              "micwypych/webapp"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2019 Author name here"
+author:              "Michał Wypych"
+maintainer:          "mwypych@agh.edu.pl"
+copyright:           "2019 Michał Wypych"
 
 extra-source-files:
 - README.md
@@ -21,12 +21,13 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- text
 
 library:
   source-dirs: src
 
 executables:
-  hs-empty-project-plain-exe:
+  webapp-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -34,10 +35,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hs-empty-project-plain
+    - webapp
 
 tests:
-  hs-empty-project-plain-test:
+  webapp-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -45,4 +46,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hs-empty-project-plain
+    - webapp
