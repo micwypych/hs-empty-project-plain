@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f3e6ea6e865a8ac8288c2d61b50be8126de84056d582b6c7e135a36702daada9
+-- hash: b098386309b55a59fe4762d579b53d41892b437e8502308e1b06b5331f7f8fc1
 
 name:           webapp
 version:        0.1.0.0
@@ -29,12 +29,17 @@ library
   exposed-modules:
       Lib
       Student
+      StudentRepository
   other-modules:
       Paths_webapp
   hs-source-dirs:
       src
+  ghc-options: -Wall -fwarn-tabs
   build-depends:
-      base >=4.7 && <5
+      HDBC >=2.4
+    , HDBC-sqlite3 >=2.3
+    , base >=4.7 && <5
+    , convertible
     , text
   default-language: Haskell2010
 
@@ -44,9 +49,12 @@ executable webapp-exe
       Paths_webapp
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -fwarn-tabs -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HDBC >=2.4
+    , HDBC-sqlite3 >=2.3
+    , base >=4.7 && <5
+    , convertible
     , text
     , webapp
   default-language: Haskell2010
@@ -58,9 +66,12 @@ test-suite webapp-test
       Paths_webapp
   hs-source-dirs:
       test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HDBC >=2.4
+    , HDBC-sqlite3 >=2.3
+    , base >=4.7 && <5
+    , convertible
     , text
     , webapp
   default-language: Haskell2010

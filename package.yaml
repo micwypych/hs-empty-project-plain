@@ -22,15 +22,23 @@ description:         Please see the README on GitHub at <https://github.com/gith
 dependencies:
 - base >= 4.7 && < 5
 - text
+- HDBC >= 2.4
+- HDBC-sqlite3 >= 2.3
+- convertible
 
 library:
   source-dirs: src
+  ghc-options:
+      - -Wall
+      - -fwarn-tabs
 
 executables:
   webapp-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
+    - -Wall
+    - -fwarn-tabs
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
@@ -42,6 +50,7 @@ tests:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
+    - -Wall
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
