@@ -25,6 +25,8 @@ dependencies:
 - HDBC >= 2.4
 - HDBC-sqlite3 >= 2.3
 - convertible
+- aeson
+- attoparsec
 
 library:
   source-dirs: src

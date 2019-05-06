@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b098386309b55a59fe4762d579b53d41892b437e8502308e1b06b5331f7f8fc1
+-- hash: b2a4a0f423c039201d72a6de66a8a338ac398c5bfc17d5e123b9c276345b4b59
 
 name:           webapp
 version:        0.1.0.0
@@ -38,6 +38,8 @@ library
   build-depends:
       HDBC >=2.4
     , HDBC-sqlite3 >=2.3
+    , aeson
+    , attoparsec
     , base >=4.7 && <5
     , convertible
     , text
@@ -53,6 +55,8 @@ executable webapp-exe
   build-depends:
       HDBC >=2.4
     , HDBC-sqlite3 >=2.3
+    , aeson
+    , attoparsec
     , base >=4.7 && <5
     , convertible
     , text
@@ -70,6 +74,8 @@ test-suite webapp-test
   build-depends:
       HDBC >=2.4
     , HDBC-sqlite3 >=2.3
+    , aeson
+    , attoparsec
     , base >=4.7 && <5
     , convertible
     , text
