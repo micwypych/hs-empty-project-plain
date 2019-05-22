@@ -27,12 +27,15 @@ dependencies:
 - convertible
 - aeson
 - attoparsec
+- scotty
 
 library:
   source-dirs: src
   ghc-options:
       - -Wall
       - -fwarn-tabs
+  default-extensions: 
+    - OverloadedStrings
 
 executables:
   webapp-exe:
