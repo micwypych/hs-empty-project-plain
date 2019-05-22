@@ -28,6 +28,9 @@ dependencies:
 - aeson
 - attoparsec
 - scotty
+- http-types
+- wai
+- transformers
 
 library:
   source-dirs: src

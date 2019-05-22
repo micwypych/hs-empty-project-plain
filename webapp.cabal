@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1f6345583b783c691df7d31b9100e9dae2ed9f19d8151426b2af632a7d41655e
+-- hash: afc8e7e6502a13c5fbacc5c660b7f89c54564bc24c02d2bc5c9ec0d9470c4189
 
 name:           webapp
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       App
       Lib
       Student
+      StudentController
       StudentRepository
   other-modules:
       Paths_webapp
@@ -44,8 +45,11 @@ library
     , attoparsec
     , base >=4.7 && <5
     , convertible
+    , http-types
     , scotty
     , text
+    , transformers
+    , wai
   default-language: Haskell2010
 
 executable webapp-exe
@@ -62,8 +66,11 @@ executable webapp-exe
     , attoparsec
     , base >=4.7 && <5
     , convertible
+    , http-types
     , scotty
     , text
+    , transformers
+    , wai
     , webapp
   default-language: Haskell2010
 
@@ -82,7 +89,10 @@ test-suite webapp-test
     , attoparsec
     , base >=4.7 && <5
     , convertible
+    , http-types
     , scotty
     , text
+    , transformers
+    , wai
     , webapp
   default-language: Haskell2010
