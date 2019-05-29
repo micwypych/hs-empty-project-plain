@@ -6,7 +6,7 @@ import Data.Maybe
 
 import Student
 
-allTests = TestList 
+allTests = TestLabel "StudentValidationTest" $ TestList 
     [TestLabel "it is possible to create valid student" mkStudentValidTest, 
     TestLabel "it is impossible to create invalid student with empty first name" mkStudentInvalidEmptyNameTest,
     TestLabel "it is impossible to create invalid student with empty surname" mkStudentInvalidEmptySurnameTest,
@@ -17,7 +17,7 @@ allTests = TestList
 mkStudentValidTest = TestCase $ do
     let studentMaybe = mkStudent "Maks" "Maksowski" "0000000000"
     assertBool "validation did not return Just ..." $ isJust studentMaybe
-    let expectedStudent = Student (FirstName "Mak") (LastName "Maksowski") (StudentId "0000000000")
+    let expectedStudent = Student (FirstName "Mak") (LastName "Maksowski") (StudentId "0000000000") -- hmm something wrog?
     assertEqual "students are different" expectedStudent (fromJust studentMaybe)
 
 mkStudentInvalidEmptyNameTest = TestCase $ do
