@@ -23,13 +23,14 @@ mkStudentController repository = do
 createStudent :: IConnection conn => StudentController conn -> Student -> ActionM ()
 createStudent  controller (Student (FirstName firstName) (LastName lastName) (StudentId studentId)) = do
     let studentMaybe = mkStudent firstName lastName studentId
+    --the line is equivallent to the 3 lines below
     student <- maybe failedValidation return studentMaybe
     --when (notValid studentMaybe) $ do
-    --    status badRequest400
-    --    finish
+    --    failedValidation
+    --let Just student = studentMaybe
 
     let repository = repository' controller
-    idMaybe <- liftIO $ R.createStudent repository student
+    idMaybe <- liftIO $ R.createStudent repository student -- this probably does not work properly due to the uncaught exception, see StudentRepository test.
 
     maybe failedInsert (\identifier -> json (identifier, student)) idMaybe
     

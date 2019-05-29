@@ -31,6 +31,9 @@ dependencies:
 - http-types
 - wai
 - transformers
+- containers
+- mtl
+- data-default
 
 library:
   source-dirs: src

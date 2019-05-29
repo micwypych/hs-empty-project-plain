@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 213976b58b7cef6d36ca99ba50dae2f04c184a4003008b48c4d93e272d38568c
+-- hash: c2c338cc7cbd9cb22d96095eaf9a330be7a48bc5424e08d8466c27fd0b73cec5
 
 name:           webapp
 version:        0.1.0.0
@@ -44,8 +44,11 @@ library
     , aeson
     , attoparsec
     , base >=4.7 && <5
+    , containers
     , convertible
+    , data-default
     , http-types
+    , mtl
     , scotty
     , text
     , transformers
@@ -65,8 +68,11 @@ executable webapp-exe
     , aeson
     , attoparsec
     , base >=4.7 && <5
+    , containers
     , convertible
+    , data-default
     , http-types
+    , mtl
     , scotty
     , text
     , transformers
@@ -93,8 +99,11 @@ test-suite webapp-test
     , aeson
     , attoparsec
     , base >=4.7 && <5
+    , containers
     , convertible
+    , data-default
     , http-types
+    , mtl
     , scotty
     , text
     , transformers
