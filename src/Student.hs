@@ -7,10 +7,14 @@ import Data.Aeson
 import Data.Attoparsec.Internal.Types
 
 data Student = Student FirstName LastName StudentId
+    deriving (Eq, Show, Read)
 
 newtype FirstName = FirstName Text
+    deriving (Eq, Show, Read)
 newtype LastName = LastName Text
+    deriving (Eq, Show, Read)
 newtype StudentId = StudentId Text
+    deriving (Eq, Show, Read)
 
 mkStudent :: Text -> Text -> Text -> Maybe Student
 mkStudent firstName lastName studentId = 

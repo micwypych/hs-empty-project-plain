@@ -9,7 +9,7 @@ allTests = TestList [StudentRepositoryTest.allTests, StudentControllerTest.allTe
 
 main :: IO ()
 main = do 
-    Counts _ _ errors failures <- runTestTT allTests
-    if errors + failures > 0 
+    Counts _ _ errors' failures' <- runTestTT allTests
+    if errors' + failures' > 0 
         then exitFailure 
         else exitSuccess
