@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: afc8e7e6502a13c5fbacc5c660b7f89c54564bc24c02d2bc5c9ec0d9470c4189
+-- hash: 213976b58b7cef6d36ca99ba50dae2f04c184a4003008b48c4d93e272d38568c
 
 name:           webapp
 version:        0.1.0.0
@@ -78,13 +78,18 @@ test-suite webapp-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      StudentControllerTest
+      StudentRepositoryTest
+      StudentTest
       Paths_webapp
   hs-source-dirs:
       test
+  default-extensions: OverloadedStrings
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HDBC >=2.4
     , HDBC-sqlite3 >=2.3
+    , HUnit
     , aeson
     , attoparsec
     , base >=4.7 && <5
